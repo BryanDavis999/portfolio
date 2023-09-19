@@ -3,7 +3,12 @@ import Link from 'next/link';
 
 export const siteTitle = 'Portfolio';
 
-const Layout = ({children, home = false}:{children: React.ReactNode, home?: boolean}) => {
+type LayoutProps = {
+  children: React.ReactNode,
+  home?: boolean
+}
+
+const Layout = ({children, home = false}: LayoutProps) => {
   return (
     <div>
       <Head>
