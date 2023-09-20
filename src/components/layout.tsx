@@ -1,16 +1,15 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Navbar from './Navbar';
 
 export const siteTitle = 'Portfolio';
 
 type LayoutProps = {
-  children: React.ReactNode,
-  home?: boolean
+  children: React.ReactNode
 }
 
-const Layout = ({children, home = false}: LayoutProps) => {
+const Layout = ({children}: LayoutProps) => {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,16 +17,11 @@ const Layout = ({children, home = false}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <header>
-        Navbar goes here
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
-    </div>
+      <div className='h-screen w-screen flex flex-col'>
+        <Navbar />
+        {children}
+      </div>
+    </>
   );
 }
 
