@@ -17,10 +17,10 @@ const Layout = ({children}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <div className='h-screen w-screen flex flex-col'>
+      <main className='h-screen w-screen flex flex-col'>
         <Navbar />
         {children}
-      </div>
+      </main>
     </>
   );
 }
