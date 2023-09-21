@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
+import Footer from "./Footer/index"
 
 export const siteTitle = 'Portfolio';
 
@@ -20,6 +21,7 @@ const Layout = ({children}: LayoutProps) => {
       <main className='h-screen w-screen flex flex-col'>
         <Navbar />
         {children}
+        <Footer />
       </main>
     </>
   );
