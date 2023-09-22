@@ -2,7 +2,13 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from "./Footer/index"
 
-export const siteTitle = 'Portfolio';
+import { Montserrat } from "@next/font/google";
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400']
+})
+
+export const siteTitle: string = 'Portfolio';
 
 type LayoutProps = {
   children: React.ReactNode
@@ -18,7 +24,7 @@ const Layout = ({children}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <main className='h-screen w-screen flex flex-col'>
+      <main className={`h-screen w-screen flex flex-col ${montserrat.className}`}>
         <Navbar />
         {children}
         <Footer />
