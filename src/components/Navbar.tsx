@@ -1,15 +1,15 @@
-// import {GoHomeFill} from "react-icons/go"
+import {GoHomeFill} from "react-icons/go"
 
 const Navbar = () => 
-  <header className='h-12 p-2 w-full flex-initial flex justify-center items-center border-b border-blue-500'>
+  <header className='h-12 p-2 w-full flex-initial flex justify-center items-center bg-orange-600 dark:bg-sky-700 mt-7'>
     <div className="w-full max-w-6xl px-5 flex justify-between">
       <span>
-        {/* <GoHomeFill size={30} color="white" /> */}
+        {/* <GoHomeFill size={27} /> */}
       </span>
-      <div className="">
+      <div className="uppercase">
         <span>About Me | </span>
-        <span>Projects | </span>
-        <span>Blog</span>
+        <span>Blog | </span>
+        <span>Projects</span>
       </div>
     </div>
   </header>

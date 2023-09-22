@@ -1,21 +1,22 @@
 import { useTheme } from "next-themes";
 import ContactLinks from "./ContactLinks";
-import { FaSun } from "react-icons/fa6";
+import { FaSun, FaMoon } from "react-icons/fa6";
 
 const Footer = () => {
   const { theme, setTheme } = useTheme();
+  const lightModeEnabled = theme == "light";
+  const ThemeIcon = lightModeEnabled ? FaMoon : FaSun;
 
   const handleThemeToggle = () => {
-    const lightModeEnabled = theme == "light";
     setTheme(lightModeEnabled ? "dark" : "light");
   };
 
   return (
-    <footer className="h-12 flex-initial flex justify-center items-center border-t border-red-500">
+    <footer className="h-12 flex-initial flex justify-center items-center bg-orange-600 dark:bg-sky-700 mb-7">
       <div className="w-full max-w-6xl px-5 flex justify-between">
         <ContactLinks />
         <button className="m-2" onClick={handleThemeToggle}>
-          <FaSun size={27} />
+          <ThemeIcon size={27} />
         </button>
       </div>
     </footer>
