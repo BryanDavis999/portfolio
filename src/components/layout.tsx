@@ -24,7 +24,7 @@ const Layout = ({children}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <main className={`h-screen w-screen flex flex-col bg-orange-500 text-white dark:bg-sky-800 ${montserrat.className}`}>
+      <main className={`h-screen -z-30 w-screen flex flex-col bg-orange-500 text-white dark:bg-sky-800 ${montserrat.className}`}>
         <Navbar />
         {children}
         <Footer />
