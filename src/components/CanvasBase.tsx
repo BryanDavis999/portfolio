@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import demoDesign from '@/scripts/demoDesign';
 
 interface CanvasBaseProps {
     width: number;
@@ -12,16 +13,8 @@ const CanvasBase =  ({ width, height }: CanvasBaseProps) => {
         if (canvasRef.current) {
             const canvas = canvasRef.current;
             const ctx = canvas.getContext('2d');
-
             if (ctx) {
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.lineTo(width, height);
-                ctx.stroke();
-
-                ctx.beginPath();
-                ctx.arc(width/2, height/2, height/2, 0, 2 * Math.PI);
-                ctx.stroke();
+                demoDesign({ctx, width, height})
             }
         }
     },[width, height]);
