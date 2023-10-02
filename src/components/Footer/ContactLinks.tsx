@@ -5,12 +5,12 @@ const ContactLinks = () =>
     {contactData.map( ({name, link, Icon}) =>
       <a
         key={name}
-        className='m-2' //Complete dark mode
+        className='mx-2' //Complete dark mode
         href={link}
         target='_blank' // New Window
         rel='noopener noreferrer' // No Headers or Context
       >
-        <Icon size={30}/>
+        <Icon size={27}/>
       </a>
     )}
   </div>
