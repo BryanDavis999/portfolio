@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from "./Footer/index"
+import CanvasBase from './CanvasBase';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 
 import { Montserrat } from "@next/font/google";
 const montserrat = Montserrat({
@@ -15,6 +17,8 @@ type LayoutProps = {
 }
 
 const Layout = ({children}: LayoutProps) => {
+  const { height, width } = useWindowDimensions();
+
   return (
     <>
       <Head>
@@ -24,10 +28,11 @@ const Layout = ({children}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <main className={`h-screen -z-30 w-screen flex flex-col bg-orange-500 text-white dark:bg-sky-800 ${montserrat.className}`}>
+      <main className={`h-screen w-screen flex flex-col text-white ${montserrat.className}`}>
         <Navbar />
         {children}
         <Footer />
+        <CanvasBase height={height} width={width}/>
       </main>
     </>
   );

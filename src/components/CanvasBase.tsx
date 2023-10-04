@@ -21,7 +21,11 @@ const CanvasBase =  ({ width, height }: CanvasBaseProps) => {
         }
     },[width, height, theme]);
 
-    return <canvas ref={canvasRef} width={width} height={height}/>;
+    return(
+        <div className='absolute top-0 left-0 w-screen h-screen bg-orange-500 dark:bg-sky-800 -z-40'>
+            <canvas ref={canvasRef} width={width} height={height}/>
+        </div>
+    )
 };
 
 export default CanvasBase;

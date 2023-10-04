@@ -12,8 +12,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="h-12 flex-initial flex justify-center items-center mb-16 z-50">
-      <div className="w-full px-5 py-3 max-w-screen-xl flex justify-center backdrop-blur-sm bg-orange-600/30 dark:bg-sky-500/30 rounded-md">
+    <footer className="h-12 flex-initial flex justify-center items-center mb-16">
+      <div className="w-full px-5 py-3 max-w-screen-xl flex justify-center rounded-md glass_background">
         <div className="w-full max-w-screen-lg flex justify-between">
           <ContactLinks />
           <button className="mx-2" onClick={handleThemeToggle}>

@@ -3,10 +3,10 @@ import { SiGmail } from 'react-icons/si';
 
 type contactDataType = Array<{name: string, link: string, Icon: React.ElementType}>
 
-export const contactData: contactDataType = [
+export const contactInfo: contactDataType = [
   {name: 'Github', link: 'https://github.com/BryanDavis999', Icon: FaGithub},
   {name: 'LinkedIn', link: 'https://linkedin.com/in/the-bryan-davis/', Icon: FaLinkedin},
-  {name: 'Email', link: 'mailto:test@test.test', Icon: SiGmail},
+  {name: 'Email', link: 'bryandavis999.dev@gmail.com', Icon: SiGmail},
 ]
 
-export default contactData
+export default contactInfo
