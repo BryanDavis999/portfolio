@@ -1,6 +1,7 @@
-type contactDataType = Array<{start: string, end: string, organization: string, description: string, additionalNotes: Array<string>}>
+export interface timelineRecordType {start: string, end: string, organization: string, description: string, additionalNotes: Array<string>}
+type aboutMeTimelineDataType = Array<timelineRecordType>
 
-export const contactData: contactDataType = [
+export const aboutMeTimelineData: aboutMeTimelineDataType = [
   {
     start: '2004',
     end: '2016',
@@ -26,4 +27,4 @@ export const contactData: contactDataType = [
   }
 ]
 
-export default contactData
+export default aboutMeTimelineData

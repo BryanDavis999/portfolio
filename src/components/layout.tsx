@@ -28,10 +28,12 @@ const Layout = ({children}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <main className={`h-screen w-screen flex flex-col text-white ${montserrat.className}`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <main className='h-screen w-screen'>
+        <div className={`h-screen w-screen overflow-scroll flex flex-col text-white ${montserrat.className}`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
         <CanvasBase height={height} width={width}/>
       </main>
     </>
