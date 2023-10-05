@@ -29,7 +29,7 @@ const Layout = ({children}: LayoutProps) => {
         />
       </Head>
       <main className='h-screen w-screen'>
-        <div className={`h-screen w-screen overflow-scroll flex flex-col text-white ${montserrat.className}`}>
+        <div className={`h-screen w-screen overflow-y-scroll hidden_scrollbar flex flex-col text-white ${montserrat.className}`}>
           <Navbar />
           {children}
           <Footer />

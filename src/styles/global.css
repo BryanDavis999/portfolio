@@ -2,6 +2,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* For the UI backgrounds on top of the Canvas background */
 .glass_background{
   @apply backdrop-blur-sm bg-white/10 dark:bg-sky-500/10
+}
+
+/* For Webkit-based Chrome, Safari and Opera */
+.hidden_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.hidden_scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

@@ -24,6 +24,9 @@ const connectedDots = ({ctx, canvas, width, height, theme}: connectedDotsProps) 
   const distanceThreshold = 150
   const globalColor = theme == 'light' ? '#C2410C' : '#0891B2'
 
+  const speed = area / 25000
+  const getRandomSpeed = () => (Math.floor(Math.random() * speed) - (speed / 2)) / FPS
+
   // Universal context operations for the dots
   ctx.globalCompositeOperation = "source-over";
   ctx.lineWidth = 0.5;
@@ -32,8 +35,8 @@ const connectedDots = ({ctx, canvas, width, height, theme}: connectedDotsProps) 
   let points: Array<pointProps> = Array.from({length: starCount}, _ => ({
       x: Math.floor(Math.random() * width),
       y: Math.floor(Math.random() * height),
-      vx: (Math.floor(Math.random() * 40) - 20) / FPS,
-      vy: (Math.floor(Math.random() * 40) - 20) / FPS,
+      vx: getRandomSpeed(),
+      vy: getRandomSpeed(),
       radius: Math.random() * 2 + 2,
   }))
 

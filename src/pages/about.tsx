@@ -5,7 +5,7 @@ import aboutMeTimelineData, {timelineRecordType} from '@/constants/aboutMe';
 const Card = ({start, end, organization, description, additionalNotes}: timelineRecordType) => {
   const timelineString = `${start} - ${end}`
   return (
-    <div className='m-2 p-2'>
+    <div className='my-2 py-2'>
       <h2>{timelineString} : {organization}</h2>
       <p>{description}</p>
       <hr />
