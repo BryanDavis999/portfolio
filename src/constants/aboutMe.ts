@@ -1,21 +1,22 @@
-export interface timelineRecordType {start: string, end: string, organization: string, description: string, additionalNotes: Array<string>}
-type aboutMeTimelineDataType = Array<timelineRecordType>
+export interface eventRecordType {start: string, end: string, organization: string, description: string, additionalNotes?: Array<string>}
+type eventHistoryType = Array<eventRecordType>
 
-export const aboutMeTimelineData: aboutMeTimelineDataType = [
+export const educationData: eventHistoryType = [
   {
     start: '2004',
     end: '2016',
     organization: 'OOEHS, Sharjah, UAE',
-    description: 'Graduated High School',
-    additionalNotes: [],
+    description: 'Graduated High School'
   },
   {
     start: '2016',
     end: '2020',
     organization: 'FISAT, Kerala, India',
-    description: "Obtained a Bachelor of Technology Degree in Computer Science & Engineering",
-    additionalNotes: [],
-  },
+    description: "Obtained a Bachelor of Technology Degree in Computer Science & Engineering"
+  }
+]
+
+export const employmentData: eventHistoryType = [
   {
     start: '2021',
     end: '2023',
@@ -26,5 +27,3 @@ export const aboutMeTimelineData: aboutMeTimelineDataType = [
     ]
   }
 ]
-
-export default aboutMeTimelineData

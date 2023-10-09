@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "^13.5.2",
     "@types/node": "20.6.1",
+    "@types/ramda": "^0.29.6",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
@@ -19,7 +20,7 @@
     "next": "13.4.19",
     "next-themes": "^0.2.1",
     "postcss": "8.4.29",
-    "ramda": "^0.29.0",
+    "ramda": "^0.29.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
