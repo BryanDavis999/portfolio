@@ -11,8 +11,8 @@ const Home = () => {
     <Layout>
       <section className='flex flex-col justify-center items-center flex-auto'>
         <div className='flex flex-col w-full max-w-screen-lg px-5 lg:px-0'>
-          <h1 className={`text-8xl font-bold uppercase ${bebas.className}`}>Bryan Davis</h1>
-          <h2 className='mt-3 text-2xl font-light uppercase dark:text-blue-100 tracking-[0.13em]'>Web Developer & Designer</h2>
+          <h1 className={`text-8xl font-bold uppercase text-gray-700 dark:text-gray-200 ${bebas.className}`}>Bryan Davis</h1>
+          <h2 className='mt-3 text-2xl font-light uppercase text-gray-700 dark:text-gray-200 tracking-[0.13em]'>Web Developer & Designer</h2>
         </div>
       </section>
     </Layout>
