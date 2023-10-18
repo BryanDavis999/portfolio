@@ -8,7 +8,7 @@ const bebas = Anton({
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout currentLocation="home">
       <section className='flex flex-col justify-center items-center flex-auto'>
         <div className='flex flex-col w-full max-w-screen-lg px-5 lg:px-0'>
           <h1 className={`text-8xl font-bold uppercase text-gray-700 dark:text-gray-200 ${bebas.className}`}>Bryan Davis</h1>

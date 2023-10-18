@@ -7,6 +7,14 @@
   @apply backdrop-blur-sm bg-gray-500/10 text-gray-800 dark:text-gray-200
 }
 
+.unclickable_link{
+  @apply fill-red-500 dark:fill-blue-500 text-red-500 dark:text-blue-500
+}
+
+.clickable_link {
+  @apply fill-blue-500 dark:fill-red-500 text-blue-500 dark:text-red-500
+}
+
 /* For Webkit-based Chrome, Safari and Opera */
 .hidden_scrollbar::-webkit-scrollbar {
   display: none;

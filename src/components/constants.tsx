@@ -1,0 +1,1 @@
+export type pagesEnum = "home"|"about"|"blog"|"experiments"

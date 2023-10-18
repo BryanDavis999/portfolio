@@ -2,9 +2,9 @@ import Layout from '@/components/Layout';
 import Image from 'next/image';
 
 
-const Projects = () => {
+const Experiments = () => {
   return (
-    <Layout>
+    <Layout currentLocation='experiments'>
       <section className='w-full flex justify-center my-10'>
         <div className='w-full px-5 py-5 flex justify-center max-w-screen-xl glass_background rounded-lg'>
           <div className='w-full max-w-screen-lg flex flex-col'>
@@ -21,4 +21,4 @@ const Projects = () => {
   );
 }
 
-export default Projects
+export default Experiments

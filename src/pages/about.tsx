@@ -31,7 +31,7 @@ const SectionWrapper = ({ className, children }: any) => (
 
 const About = () => {
   return (
-    <Layout>
+    <Layout currentLocation='about'>
       <SectionWrapper className='mt-10'>
         <div className='md:h-60 py-4 flex flex-col md:flex-row'>
           <div className='w-52 h-52 relative aspect-square'>
