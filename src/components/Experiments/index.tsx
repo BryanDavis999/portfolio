@@ -1,7 +1,13 @@
 import Conway from "./Conway";
-import Shader101 from "./Shader101";
+import Shader101 from "./Shader101/index";
+interface ExperimentCodeProps {
+    width: number;
+    height: number;
+}
 
-export const experiments: Record<string, React.FC> = {
+export type ExperimentCodeType = ({ width, height }: ExperimentCodeProps) => React.JSX.Element
+
+export const experiments: Record<string, ExperimentCodeType> = {
   'shaders-101': Shader101,
   'conways-game-of-life': Conway,
 }
