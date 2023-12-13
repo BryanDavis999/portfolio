@@ -1,5 +1,5 @@
 import Conway from "./Conway";
-import Shader101 from "./Shader101/index";
+import WebGPUExperimentWrapper from "./webgpu";
 interface ExperimentCodeProps {
     width: number;
     height: number;
@@ -8,14 +8,14 @@ interface ExperimentCodeProps {
 export type ExperimentCodeType = ({ width, height }: ExperimentCodeProps) => React.JSX.Element
 
 export const experiments: Record<string, ExperimentCodeType> = {
-  'shaders-101': Shader101,
+  'webgpu-gol': WebGPUExperimentWrapper,
   'conways-game-of-life': Conway,
 }
 
 export const experimentDetails = [
   {
-    id: 'shaders-101',
-    title: 'Basic Shader'
+    id: 'webgpu-gol',
+    title: 'WebGpuGol'
   },
   {
     id: 'conways-game-of-life',
