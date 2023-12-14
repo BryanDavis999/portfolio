@@ -2,7 +2,7 @@ import { SIM_PARAMS, SIM_PARAM_DEFAULTS } from "./constants";
 
 const simParamBufferSize = Object.keys(SIM_PARAM_DEFAULTS).length * Float32Array.BYTES_PER_ELEMENT;
 
-const createSimParamsBuffer = ({device, gui}: any) => {
+const createSimParamsBuffer = ({device, pane}: any) => {
   const simParamBuffer = device.createBuffer({
     size: simParamBufferSize,
     usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -25,15 +25,15 @@ const createSimParamsBuffer = ({device, gui}: any) => {
   }
 
   updateSimParams();
-    if (gui === undefined) {
-      console.error('GUI not initialized');
-    } else {
-      for (const [title, {min, max, step}] of Object.entries(SIM_PARAMS)) {
-        const paramName = title as keyof typeof SIM_PARAM_DEFAULTS;
-        gui.add(SIM_PARAM_DEFAULTS, paramName, min, max, step).onFinishChange(updateSimParams);
-      }
+
+  if(pane === undefined){
+    console.error('tweakpane not initialized!')
+  }else{
+    for (const [title, limits] of Object.entries(SIM_PARAMS)) {
+      const paramName = title as keyof typeof SIM_PARAM_DEFAULTS;
+      pane.addBinding(SIM_PARAM_DEFAULTS, paramName, limits).on('change', updateSimParams)
     }
-  ;
+  };
 
   return simParamBuffer
 }

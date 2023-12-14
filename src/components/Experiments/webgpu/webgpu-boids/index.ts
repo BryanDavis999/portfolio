@@ -3,7 +3,7 @@ import { createSimParamsBuffer, createParticleBuffers, createSpriteVertexBuffer 
 import { NUM_PARTICLES, WORKGROUP_SIZE } from "./constants";
 import { createComputePipeline, createRenderPipeline } from "./pipelines/index";
 import createParticleBindGroups from "./createParticleBindGroups";
-// import { GUI } from 'dat.gui'
+import { Pane } from "tweakpane";
 
 const webGPUBoids = async (canvas: HTMLCanvasElement, handleError: (error: string) => void) => {
   const device = await getDevice(handleError)
@@ -14,9 +14,9 @@ const webGPUBoids = async (canvas: HTMLCanvasElement, handleError: (error: strin
 
   const canvasFormat = navigator.gpu.getPreferredCanvasFormat();
 
-  const dat = await import('dat.gui')
-  const gui = new dat.GUI();
-  const simParamBuffer = createSimParamsBuffer({device, gui})
+  const pane = new Pane();
+
+  const simParamBuffer = createSimParamsBuffer({device, pane})
   const spriteVertexBuffer = createSpriteVertexBuffer(device)
   const [particleBuffers, particleBufferSize] = createParticleBuffers(device)
 
