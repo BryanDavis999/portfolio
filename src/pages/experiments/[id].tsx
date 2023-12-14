@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { getAllExperimentIds, getExperimentCode } from '@/components/Experiments';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
 
 export const getStaticPaths = () => {
   const paths = getAllExperimentIds();
@@ -19,7 +18,6 @@ type ExperimentProps = {
 }
 
 const Experiment = ({ id }: ExperimentProps) => {
-  const { height, width } = useWindowDimensions();
   const ExperimentCode = getExperimentCode(id)
 
   return (
@@ -28,7 +26,7 @@ const Experiment = ({ id }: ExperimentProps) => {
         <title>{id}</title>
       </Head>
       <div className='absolute top-0 left-0 w-screen h-screen'>
-        <ExperimentCode height={height} width={width}/>
+        <ExperimentCode />
       </div>
     </>
   );

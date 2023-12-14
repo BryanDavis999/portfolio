@@ -1,14 +1,11 @@
-import WebGPUExperimentWrapper from "./webgpu";
-interface ExperimentCodeProps {
-    width: number;
-    height: number;
-}
+import WebGPUBoids from "./webgpu-boids/index";
+import WebGPUGol from "./webgpu-gol";
 
-export type ExperimentCodeType = ({ width, height }: ExperimentCodeProps) => React.JSX.Element
+export type ExperimentCodeType = () => React.JSX.Element
 
 export const experiments: Record<string, ExperimentCodeType> = {
-  'webgpu-gol': WebGPUExperimentWrapper,
-  'conways-game-of-life': WebGPUExperimentWrapper,
+  'webgpu-gol': WebGPUGol,
+  'webgpu-boids': WebGPUBoids,
 }
 
 export const experimentDetails = [

@@ -5,7 +5,7 @@ import { createComputePipeline, createRenderPipeline } from "./pipelines/index";
 import createParticleBindGroups from "./createParticleBindGroups";
 import { Pane } from "tweakpane";
 
-const webGPUBoids = async (canvas: HTMLCanvasElement, handleError: (error: string) => void) => {
+const webGpuBoids = async (canvas: HTMLCanvasElement, handleError: (error: string) => void) => {
   const device = await getDevice(handleError)
   if(!device) return
 
@@ -67,4 +67,4 @@ const webGPUBoids = async (canvas: HTMLCanvasElement, handleError: (error: strin
   requestAnimationFrame(frame);
 };
 
-export default webGPUBoids;
+export default webGpuBoids;

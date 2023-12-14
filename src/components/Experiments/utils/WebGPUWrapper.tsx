@@ -2,14 +2,13 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { append } from 'ramda';
 
-import webGPUGol from './webgpu-boids';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
 
-interface CanvasBaseProps {
-    width: number;
-    height: number;
-}
+type webGpuCodeType = (canvas: HTMLCanvasElement, handleError: (error: string) => void) => Promise<void>
+interface webGpuWrapperType {webGpuCode: webGpuCodeType}
 
-const WebGPUExperimentWrapper =  ({ width, height }: CanvasBaseProps) => {
+const WebGPUWrapper =  ({webGpuCode}: webGpuWrapperType) => {
+    const { height, width } = useWindowDimensions();
     const [errors, setErrors] = useState<Array<string>>([]);
 
     const handleError = (error: string) => {
@@ -23,7 +22,7 @@ const WebGPUExperimentWrapper =  ({ width, height }: CanvasBaseProps) => {
     useEffect(() => {
       if (canvasRef.current) {
         const canvas = canvasRef.current;
-        webGPUGol(canvas, handleError);
+        webGpuCode(canvas, handleError);
       }
     },[width, height, theme]);
 
@@ -32,4 +31,4 @@ const WebGPUExperimentWrapper =  ({ width, height }: CanvasBaseProps) => {
     )
 };
 
-export default WebGPUExperimentWrapper;
+export default WebGPUWrapper;
