@@ -1,4 +1,3 @@
-import Conway from "./Conway";
 import WebGPUExperimentWrapper from "./webgpu";
 interface ExperimentCodeProps {
     width: number;
@@ -9,17 +8,17 @@ export type ExperimentCodeType = ({ width, height }: ExperimentCodeProps) => Rea
 
 export const experiments: Record<string, ExperimentCodeType> = {
   'webgpu-gol': WebGPUExperimentWrapper,
-  'conways-game-of-life': Conway,
+  'conways-game-of-life': WebGPUExperimentWrapper,
 }
 
 export const experimentDetails = [
   {
     id: 'webgpu-gol',
-    title: 'WebGpuGol'
+    title: 'WebGPU Game of Life Implementation'
   },
   {
-    id: 'conways-game-of-life',
-    title: 'Conway\'s Game of Life'
+    id: 'webgpu-boids',
+    title: 'WebGPU BOIDs implementation'
   }
 ]
 

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { append } from 'ramda';
 
-import webGPUGol from './webgpu-gol';
+import webGPUGol from './webgpu-boids';
 
 interface CanvasBaseProps {
     width: number;
