@@ -15,12 +15,10 @@ const getWindowDimensions = (window: windowProps) => {
 
 const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState({width: 0, height: 0});
-  
-  //See if below can be refactored in NextJS
-  useEffect(() => setWindowDimensions(getWindowDimensions(window)), []);
+  const handleResize = () => setWindowDimensions(getWindowDimensions(window));
 
-  useLayoutEffect(() => {
-    const handleResize = () => setWindowDimensions(getWindowDimensions(window));
+  useEffect(() => {
+    handleResize()
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);

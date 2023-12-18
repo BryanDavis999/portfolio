@@ -1,5 +1,5 @@
 import { getDevice, getContext, getClearScreenPass } from "./setupUtils";
-import { createSimParamsBuffer, createParticleBuffers, createSpriteVertexBuffer } from "./buffers/index";
+import { createSimParamsBuffer, createParticleBuffers, createSpriteVertexBuffer, createWindowSizeBuffer } from "./buffers/index";
 import { NUM_PARTICLES, WORKGROUP_SIZE } from "./constants";
 import { createComputePipeline, createRenderPipeline } from "./pipelines/index";
 import createParticleBindGroups from "./createParticleBindGroups";
@@ -18,6 +18,7 @@ const webGpuBoids = async (canvas: HTMLCanvasElement, handleError: (error: strin
 
   const simParamBuffer = createSimParamsBuffer({device, pane})
   const spriteVertexBuffer = createSpriteVertexBuffer(device)
+  const windowSizeBuffer = createWindowSizeBuffer({device, width: canvas.width, height: canvas.height})
   const [particleBuffers, particleBufferSize] = createParticleBuffers(device)
 
   const renderPipeline = createRenderPipeline({device, canvasFormat})
@@ -26,9 +27,12 @@ const webGpuBoids = async (canvas: HTMLCanvasElement, handleError: (error: strin
   const particleBindGroups = createParticleBindGroups({
     device,
     computePipeline,
-    simParamBuffer,
-    particleBuffers,
-    particleBufferSize 
+    buffers: {
+      simParamBuffer,
+      particleBuffers,
+      particleBufferSize,
+      windowSizeBuffer
+    }
   })
 
   const renderPassDescriptor = getClearScreenPass(context)
