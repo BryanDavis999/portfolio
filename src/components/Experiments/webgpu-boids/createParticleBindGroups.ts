@@ -4,8 +4,7 @@ const createParticleBindGroups = ({
   buffers: {
     simParamBuffer,
     particleBuffers,
-    particleBufferSize,
-    windowSizeBuffer
+    particleBufferSize
   }
 }: any) => {
   const particleBindGroups: GPUBindGroup[] = new Array(2);
@@ -36,17 +35,7 @@ const createParticleBindGroups = ({
             offset: 0,
             size: particleBufferSize,
           },
-        },
-        // { //Fix the break!
-        //   binding: 3,
-        //   resource: { buffer: windowSizeBuffer }
-        // },
-        // {
-        //   binding: 3,
-        //   resource: {
-        //     buffer: windowSizeBuffer,
-        //   },
-        // },
+        }
       ],
     });
   }
