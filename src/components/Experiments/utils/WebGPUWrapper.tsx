@@ -24,10 +24,13 @@ const WebGPUWrapper =  ({webGpuCode}: webGpuWrapperType) => {
         const canvas = canvasRef.current;
         webGpuCode(canvas, handleError);
       }
-    },[width, height, theme]);
+    },[]);
+
+    const size = width < height ? width : height
+    // TODO: Create a more robust solution
 
     return(
-      <canvas ref={canvasRef} width={width} height={height}/>
+      <canvas ref={canvasRef} width={size} height={size}/>
     )
 };
 
