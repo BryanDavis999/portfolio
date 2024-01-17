@@ -34,6 +34,19 @@ type ExperimentProps = {
   info: string
 }
 
+const NavBar = ({customStyle}: any) => (
+  <div className={`h-6 flex justify-between items-center ${customStyle}`}>
+    <div className='flex'>
+      <p>Back</p>
+      <p>Forward</p>
+    </div>
+    <div className='flex'>
+      <p>Theme</p>
+      <p>Home</p>
+    </div>
+  </div>
+)
+
 const Experiment = ({ id, info }: ExperimentProps) => {
   // const ExperimentCode = getExperimentCode(id)
 
@@ -50,13 +63,15 @@ const Experiment = ({ id, info }: ExperimentProps) => {
         <title>{id}</title>
       </Head>
       <div className='absolute top-0 left-0 w-screen h-screen flex flex-col overflow-scroll md:flex-row md:overflow-clip'>
-        <div className='w-full bg-red-900'>
-          <div className='grow-0 aspect-square w-full bg-red-500'>
-            The content in question.
+        <NavBar customStyle='md:hidden'/>
+        <div className='w-full md:w-1/2 md:flex md:items-center md:justify-center bg-red-900'>
+          <div className='grow-0 aspect-square w-full md:max-w-2xl bg-red-500 flex items-center justify-center'>
+            <p>{id} content</p>
             {/* <ExperimentCode /> */}
           </div>
         </div>
-        <div className='bg-blue-500 w-full md:w-1/2'>
+        <div className='bg-blue-500 w-full md:w-1/2 md:overflow-y-scroll p-5'>
+          <NavBar customStyle='hidden md:flex'/>
           <Markdown>{info}</Markdown>
         </div>
       </div>
