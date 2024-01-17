@@ -2,12 +2,7 @@ export const Links = [
   {
     key: 'about',
     link: "/about",
-    text: "About"
-  },
-  {
-    key: 'blog',
-    link: "/blog",
-    text: "Blog"
+    text: "About Me"
   },
   {
     key: 'experiments',
