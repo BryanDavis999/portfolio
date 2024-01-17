@@ -28,6 +28,10 @@ h2 {
   @apply text-xl
 }
 
+a {
+  @apply text-blue-600
+}
+
 /* For IE, Edge and Firefox */
 .hidden_scrollbar {
   -ms-overflow-style: none;
