@@ -1,21 +1,27 @@
-import Layout from '@/components/Layout';
-import {educationData, employmentData, eventRecordType} from '@/constants/aboutMe';
 import Image from 'next/image';
 import { isEmpty } from "ramda";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import Markdown from 'react-markdown';
+import styles from "@/styles/markdown.module.css"
+import Layout from '@/components/Layout';
 
-const Card = ({start, end, organization, description, additionalNotes = []}: eventRecordType) => {
-  const timelineString = `${start} - ${end}`
-  return (
-    <div className='my-2 py-2'>
-      <h2>{timelineString} : {organization}</h2>
-      <p>{description}</p>
-      {!isEmpty(additionalNotes) &&
-        <ul className='text-gray-300 mt-3'>
-          {additionalNotes.map(note => <li key={note}>{note}</li>)}
-        </ul>
-      }
-    </div>
-  )
+const getPersonalInfoPath = (fileName:string) => path.join(process.cwd(), 'personal_info', `${fileName}.md`);
+const getPersonalInfoContent = (fileName:string) => matter(
+  fs.readFileSync(getPersonalInfoPath(fileName), 'utf8')
+).content;
+
+export const getStaticProps = () => {
+  const employmentHistory = getPersonalInfoContent('employment');
+  const educationHistory = getPersonalInfoContent('education')
+
+  return ({
+    props: {
+      employmentHistory,
+      educationHistory
+    }
+  })
 }
 
 const SectionWrapper = ({ className, children }: any) => (
@@ -29,7 +35,7 @@ const SectionWrapper = ({ className, children }: any) => (
 )
 
 
-const About = () => {
+const About = ({employmentHistory, educationHistory}: any) => {
   return (
     <Layout currentLocation='about'>
       <SectionWrapper className='mt-10'>
@@ -45,12 +51,10 @@ const About = () => {
         </div>
       </SectionWrapper>
       <SectionWrapper className='mt-10'>
-        <h1 className='text-4xl mb-6 font-bold'>Previous Employment</h1>
-        {employmentData.map(record => <Card key={record.organization} {...record} />)}
+        <Markdown className={styles.markdown}>{employmentHistory}</Markdown>
       </SectionWrapper>
       <SectionWrapper className='my-10'>
-        <h1 className='text-4xl mb-6 font-bold'>Educational Qualifications</h1>
-        {educationData.map(record => <Card key={record.organization} {...record} />)}
+        <Markdown className={styles.markdown}>{educationHistory}</Markdown>
       </SectionWrapper>
     </Layout>
   );

@@ -23,7 +23,7 @@ const Navbar = ({currentLocation}: NavbarProps) => {
             {
               Links.map( ({key, link, text}, index) => (
                 <Link key={key} href={link} className={classNames({
-                  'px-2': true,
+                  'px-2 border-black dark:border-white': true,
                   'border-r': index !== Links.length -1,
                   'unclickable_link': currentLocation === key,
                   'clickable_link': currentLocation !== key 
