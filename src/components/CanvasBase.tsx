@@ -22,7 +22,7 @@ const CanvasBase =  ({ width, height }: CanvasBaseProps) => {
     },[width, height, theme]);
 
     return(
-        <div className='absolute top-0 left-0 w-screen h-screen bg-gray-100 dark:bg-gray-900 -z-40'>
+        <div className='absolute top-0 left-0 w-screen h-[100dvh] bg-gray-100 dark:bg-gray-900 -z-40'>
             <canvas ref={canvasRef} width={width} height={height}/>
         </div>
     )
