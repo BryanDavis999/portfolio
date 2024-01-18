@@ -5,6 +5,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from "next/link"
 import { IoCaretBackOutline } from "react-icons/io5"
+import styles from "@/styles/markdown.module.css"
 
 import { getAllExperimentIds, getExperimentCode } from '@/components/Experiments';
 import ThemeIcon from '@/components/common/ThemeIcon';
@@ -60,9 +61,9 @@ const Experiment = ({ id, info }: ExperimentProps) => {
             <ExperimentCode />
           </div>
         </div>
-        <div className='bg-gray-300 dark:bg-black w-full md:w-1/2 md:overflow-y-scroll p-5'>
+        <div className='bg-gray-300 dark:bg-black w-full md:w-1/2 overflow-none md:overflow-y-auto p-5'>
           <NavBar customStyle='hidden md:flex mb-5'/>
-          <Markdown>{info}</Markdown>
+          <Markdown className={styles.markdown}>{info}</Markdown>
         </div>
       </div>
     </>

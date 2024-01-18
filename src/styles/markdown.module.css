@@ -1,0 +1,24 @@
+/* TODO: Add styling for all h classes */
+.markdown h1 {
+  @apply text-3xl my-7 font-semibold
+}
+
+.markdown h2 {
+  @apply text-xl my-3 font-semibold
+}
+
+.markdown a {
+  @apply text-blue-600
+}
+
+.markdown ul {
+  @apply list-disc
+}
+
+.markdown ul li {
+  @apply ml-3
+}
+
+.markdown hr {
+  @apply mb-5 mt-7
+}

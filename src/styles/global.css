@@ -19,18 +19,6 @@
 .hidden_scrollbar::-webkit-scrollbar {
   display: none;
 }
-/* TODO: Add styling for all h classes */
-h1 {
-  @apply text-3xl
-}
-
-h2 {
-  @apply text-xl
-}
-
-a {
-  @apply text-blue-600
-}
 
 /* For IE, Edge and Firefox */
 .hidden_scrollbar {
