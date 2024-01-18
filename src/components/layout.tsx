@@ -3,8 +3,7 @@ import { Montserrat } from "@next/font/google";
 
 import Navbar from './Navbar/index';
 import Footer from "./Footer/index"
-import CanvasBase from './CanvasBase';
-import useWindowDimensions from '@/hooks/useWindowDimensions';
+import ConnectedDots from './ConnectedDots';
 import { pagesEnum } from './constants';
 
 const montserrat = Montserrat({
@@ -20,8 +19,6 @@ type LayoutProps = {
 }
 
 const Layout = ({children, currentLocation}: LayoutProps) => {
-  const { height, width } = useWindowDimensions();
-
   return (
     <>
       <Head>
@@ -37,7 +34,7 @@ const Layout = ({children, currentLocation}: LayoutProps) => {
           {children}
           <Footer />
         </div>
-        <CanvasBase height={height} width={width}/>
+        <ConnectedDots />
       </main>
     </>
   );

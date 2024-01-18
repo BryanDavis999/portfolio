@@ -22,9 +22,9 @@ const connectedDots = ({ctx, canvas, width, height, theme}: connectedDotsProps) 
   const area = height * width
   const starCount = area / 10000 // 1 star for every 10,000 pixels
   const distanceThreshold = 150
-  const globalColor = theme == 'light' ? '#FBBF24' : '#075985'
+  const globalColor = theme == 'light' ? '#f59e0b' : '#075985'
 
-  const speed = area / 25000
+  const speed = 120
   const getRandomSpeed = () => (Math.floor(Math.random() * speed) - (speed / 2)) / FPS
 
   // Universal context operations for the dots
