@@ -19,7 +19,7 @@ export const getStaticPaths = () => {
 }
 
 export const getStaticProps = ({ params: { id } }: any) => {
-  const experimentInfoPath = path.join(process.cwd(), 'experiment_info', id + '.md');
+  const experimentInfoPath = path.join(process.cwd(), 'src', 'constants', 'experimentInfo', id + '.md');
   const fileContent = fs.readFileSync(experimentInfoPath, 'utf8');
   const matterObject = matter(fileContent);
 

@@ -7,7 +7,7 @@ import Markdown from 'react-markdown';
 import styles from "@/styles/markdown.module.css"
 import Layout from '@/components/Layout';
 
-const getPersonalInfoPath = (fileName:string) => path.join(process.cwd(), 'personal_info', `${fileName}.md`);
+const getPersonalInfoPath = (fileName:string) => path.join(process.cwd(), 'src', 'constants', 'personalInfo', `${fileName}.md`);
 const getPersonalInfoContent = (fileName:string) => matter(
   fs.readFileSync(getPersonalInfoPath(fileName), 'utf8')
 ).content;
