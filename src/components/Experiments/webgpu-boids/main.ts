@@ -5,7 +5,11 @@ import { createComputePipeline, createRenderPipeline } from "./pipelines/index";
 import createParticleBindGroups from "./createParticleBindGroups";
 import { Pane } from "tweakpane";
 
-const webGpuBoids = async (canvas: HTMLCanvasElement, handleError: (error: string) => void) => {
+const webGpuBoids = async (
+  canvas: HTMLCanvasElement,
+  handleError: (error: string) => void,
+  pane: Pane
+) => {
   const device = await getDevice(handleError)
   if(!device) return
 
@@ -13,8 +17,6 @@ const webGpuBoids = async (canvas: HTMLCanvasElement, handleError: (error: strin
   if(!context) return
 
   const canvasFormat = navigator.gpu.getPreferredCanvasFormat();
-
-  const pane = new Pane();
 
   const simParamBuffer = createSimParamsBuffer({device, pane})
   const spriteVertexBuffer = createSpriteVertexBuffer(device)

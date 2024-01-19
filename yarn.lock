@@ -214,6 +214,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tweakpane/core@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@tweakpane/core/-/core-2.0.3.tgz#9ac511d1f73d3bcb61b8ddc47b09a6b2e9dfdd53"
+  integrity sha512-qHci4XA1Wngpwy8IzsLh5JEdscz8aDti/9YhyOaq01si+cgNDaZfwzTtXdn1+xTxSnCM+pW4Zb2/4eqn+K1ATw==
+
 "@types/debug@^4.0.0":
   version "4.1.12"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.12.tgz#a155f21690871953410df4b6b6f53187f0500917"

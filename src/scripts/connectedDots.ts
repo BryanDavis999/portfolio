@@ -24,7 +24,7 @@ const connectedDots = ({ctx, canvas, width, height, theme}: connectedDotsProps) 
   const distanceThreshold = 150
   const globalColor = theme == 'light' ? '#f59e0b' : '#075985'
 
-  const speed = 120
+  const speed = 40
   const getRandomSpeed = () => (Math.floor(Math.random() * speed) - (speed / 2)) / FPS
 
   // Universal context operations for the dots
