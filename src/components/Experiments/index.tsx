@@ -11,11 +11,13 @@ export const experiments: Record<string, ExperimentCodeType> = {
 export const experimentDetails = [
   {
     id: 'webgpu-gol',
-    title: 'WebGPU Game of Life Implementation'
+    engine: 'WebGPU',
+    title: 'Game of Life'
   },
   {
     id: 'webgpu-boids',
-    title: 'WebGPU BOIDs implementation'
+    engine: 'WebGPU',
+    title: 'BOIDs'
   }
 ]
 

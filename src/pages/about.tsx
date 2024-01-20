@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { isEmpty } from "ramda";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -41,7 +40,7 @@ const About = ({employmentHistory, educationHistory}: any) => {
       <SectionWrapper className='mt-10'>
         <div className='md:h-60 py-4 flex flex-col md:flex-row'>
           <div className='w-52 h-52 relative aspect-square'>
-            <Image fill={true} src='/self.jpg' alt='A photo of Bryan' className='rounded-2xl'/>
+            <Image fill={true} src='/about/self.jpg' alt='A photo of Bryan' className='rounded-2xl'/>
           </div>
           <div className='mt-6 ml-0 md:mt-0 md:ml-6'>
             <h1 className='text-4xl mb-6 font-bold'>Hi, I&apos;m Bryan.</h1>
