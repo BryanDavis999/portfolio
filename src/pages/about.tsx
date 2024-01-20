@@ -6,6 +6,8 @@ import Markdown from 'react-markdown';
 import styles from "@/styles/markdown.module.css"
 import Layout from '@/components/Layout';
 
+import skillIcons from '@/constants/personalInfo/skillIcons';
+
 const getPersonalInfoPath = (fileName:string) => path.join(process.cwd(), 'src', 'constants', 'personalInfo', `${fileName}.md`);
 const getPersonalInfoContent = (fileName:string) => matter(
   fs.readFileSync(getPersonalInfoPath(fileName), 'utf8')
@@ -33,6 +35,12 @@ const SectionWrapper = ({ className, children }: any) => (
   </section>
 )
 
+const SkillIcons = () => (
+  <div className='mt-5 flex items-center h-8 space-x-3'>
+    {skillIcons.map(({id, Icon, size}) => <Icon key={id} size={size} />)}
+  </div>
+)
+
 
 const About = ({employmentHistory, educationHistory}: any) => {
   return (
@@ -42,10 +50,14 @@ const About = ({employmentHistory, educationHistory}: any) => {
           <div className='w-52 h-52 relative aspect-square'>
             <Image fill={true} src='/about/self.jpg' alt='A photo of Bryan' className='rounded-2xl'/>
           </div>
-          <div className='mt-6 ml-0 md:mt-0 md:ml-6'>
+          <div className='mt-6 ml-0 md:mt-0 md:ml-6 flex flex-col justify-between'>
             <h1 className='text-4xl mb-6 font-bold'>Hi, I&apos;m Bryan.</h1>
-            <span>A software developer who prides himself on elegant and easy-to-maintain solutions. </span>
-            <span className='lg:inline-block'>I have two years of experience in full stack web development using React & Rails.</span>
+            <div>
+              <span>A software developer who prides himself on elegant and easy-to-maintain solutions. </span>
+              <span className='lg:inline-block'>I have three years of professional experience in full stack web development. </span>
+              <span className='block'>I&apos;m proficient in the frameworks below.</span>
+            </div>
+            <SkillIcons />
           </div>
         </div>
       </SectionWrapper>

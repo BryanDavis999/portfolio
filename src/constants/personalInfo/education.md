@@ -13,6 +13,8 @@ Obtained a Bachelor of Technology Degree in Computer Science & Engineering
 ---
 
 ## 2004 - 2016 : OOEHS, Sharjah, UAE  
-Graduated High School  
+Graduated high school  
+
+---
 
 &nbsp;
