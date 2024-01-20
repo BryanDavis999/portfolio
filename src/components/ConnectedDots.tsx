@@ -27,7 +27,7 @@ const ConnectedDots =  () => {
     },[theme]);
 
     return(
-        <div className='absolute top-0 left-0 w-screen h-[100dvh] bg-slate-300 dark:bg-gray-950 -z-40'>
+        <div className='absolute top-0 left-0 w-screen h-[100dvh] max-h-screen bg-slate-300 dark:bg-gray-950 -z-40'>
             <canvas ref={canvasRef} />
         </div>
     )

@@ -28,8 +28,8 @@ const Layout = ({children, currentLocation}: LayoutProps) => {
           content="Bryan Davis : portfolio"
         />
       </Head>
-      <main className='h-[100dvh] w-screen'>
-        <div className={`h-[100dvh] w-screen overflow-y-scroll hidden_scrollbar flex flex-col text-white ${montserrat.className}`}>
+      <main className='h-[100dvh] max-h-screen w-screen'>
+        <div className={`h-full w-full overflow-y-scroll hidden_scrollbar flex flex-col text-white ${montserrat.className}`}>
           <Navbar currentLocation={currentLocation}/>
           {children}
           <Footer />

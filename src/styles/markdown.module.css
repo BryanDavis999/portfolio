@@ -16,7 +16,7 @@
 }
 
 .markdown ul li {
-  @apply ml-3
+  @apply ml-5
 }
 
 .markdown hr {

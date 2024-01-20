@@ -54,7 +54,7 @@ const Experiment = ({ id, info }: ExperimentProps) => {
       <Head>
         <title>{id}</title>
       </Head>
-      <div className='absolute top-0 left-0 w-screen h-[100dvh] flex flex-col overflow-scroll md:flex-row md:overflow-clip'>
+      <div className='absolute top-0 left-0 w-screen h-[100dvh] max-h-screen flex flex-col overflow-scroll md:flex-row md:overflow-clip'>
         <NavBar customStyle='md:hidden my-5'/>
         <ExperimentCode />
         <div className='bg-gray-300 dark:bg-black w-full md:w-1/2 overflow-none md:overflow-y-auto p-5'>

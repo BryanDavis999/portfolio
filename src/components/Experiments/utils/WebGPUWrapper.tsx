@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { append } from 'ramda';
+import { append, isEmpty } from 'ramda';
 import { Pane } from 'tweakpane';
 
 type webGpuCodeType = (canvas: HTMLCanvasElement, handleError: (error: string) => void, pane: Pane) => Promise<void>
@@ -16,7 +16,6 @@ const WebGPUWrapper =  ({webGpuCode}: webGpuWrapperType) => {
     const [errors, setErrors] = useState<Array<string>>([]);
 
     const handleError = (error: string) => {
-      console.log(error);
       setErrors(prevErrors => append(error, prevErrors))
     }
 
@@ -36,8 +35,15 @@ const WebGPUWrapper =  ({webGpuCode}: webGpuWrapperType) => {
     return(
       <div className='w-full md:w-1/2 md:flex md:items-center md:justify-center bg-gray-600 dark:bg-gray-800'>
         <div className='absolute mt-5 ml-5 md:top-0 md:left-0' ref={controlPanelContainerRef}/>
-        <div className='grow-0 aspect-square w-full md:max-w-2xl bg-red-500 flex items-center justify-center'>
+        <div className='grow-0 aspect-square w-full md:max-w-2xl bg-red-500 flex items-center justify-center relative'>
           <canvas ref={canvasRef} />
+          {
+            isEmpty(errors) ?
+              null :
+              <div className='w-full py-2 bg-slate-300 dark:bg-black absolute uppercase text-sm text-center'>
+                {errors[0]}
+              </div>
+          }
         </div>
       </div>
     )
