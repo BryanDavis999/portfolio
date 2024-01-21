@@ -34,7 +34,7 @@ const WebGPUWrapper =  ({webGpuCode}: webGpuWrapperType) => {
 
     return(
       <div className='w-full md:w-1/2 md:flex md:items-center md:justify-center bg-gray-600 dark:bg-gray-800'>
-        <div className='absolute mt-5 ml-5 md:top-0 md:left-0' ref={controlPanelContainerRef}/>
+        <div className='absolute mt-5 ml-5 md:top-0 md:left-0 z-10' ref={controlPanelContainerRef}/>
         <div className='grow-0 aspect-square w-full md:max-w-2xl bg-red-500 flex items-center justify-center relative'>
           <canvas ref={canvasRef} />
           {
