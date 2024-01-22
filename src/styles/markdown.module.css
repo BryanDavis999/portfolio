@@ -7,12 +7,16 @@
   @apply text-xl my-3 font-semibold
 }
 
+.markdown h3 {
+  @apply mt-5 text-lg font-semibold
+}
+
 .markdown a {
   @apply text-blue-600
 }
 
 .markdown ul {
-  @apply list-disc
+  @apply list-disc mb-5
 }
 
 .markdown ul li {

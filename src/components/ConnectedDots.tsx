@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes';
 
 const ConnectedDots =  () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const { theme = 'light' } = useTheme();
+    const { theme = 'dark' } = useTheme();
 
     useEffect(() => {
         if (canvasRef.current) {
