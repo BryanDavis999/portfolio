@@ -4,11 +4,11 @@
 }
 
 .markdown h2 {
-  @apply text-xl my-3 font-semibold
+  @apply text-xl my-7 font-semibold
 }
 
 .markdown h3 {
-  @apply mt-5 text-lg font-semibold
+  @apply mt-5 mb-2 text-lg font-semibold
 }
 
 .markdown a {
@@ -16,7 +16,7 @@
 }
 
 .markdown ul {
-  @apply list-disc mb-5
+  @apply list-disc mb-8
 }
 
 .markdown ul li {

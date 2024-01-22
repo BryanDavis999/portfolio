@@ -10,16 +10,16 @@ date: '2020-01-01'
 ## 2020 - 2023: BigBinary Software Ltd.  
 Worked for 3 years as a full-stack web developer. Built web apps using React JS with a Ruby on Rails back-end.  
 
-### Worked on an in-house product known as NeetoAnalytics
-- Created validations for the analytics campaigns.
-- Helped design the analytics dashboard.
-- Integrated Google Sheets with the application.
-
 ### Worked on an in-house product known as NeetoForms
 - Rebuilt the search functionality to improve its speed and resilience.
 - Created background jobs to aggregate and analyze gathered data into reports and periodically mail them.
-- Designed the form landing page and created an optional password lock functionality.
-- Integrated Trello with the application.  
+- Designed the form landing page and a form authentication system.
+- Created an integration for Trello.
+
+### Worked on an in-house product known as NeetoAnalytics
+- Helped design the analytics dashboard.
+- Created validations for the analytics campaigns.
+- Created an integration for Google Sheets.
 
 ### Worked for an external client on Aligned Showings
 - Helped design the initial sketches and the final UI for the app.  
