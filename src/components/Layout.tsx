@@ -8,7 +8,7 @@ import { pagesEnum } from './constants';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['300', '400']
+  weight: ['300', '400', '500', '600', '700', '800', '900']
 })
 
 export const siteTitle: string = 'Portfolio';

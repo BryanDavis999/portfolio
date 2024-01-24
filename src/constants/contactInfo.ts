@@ -6,7 +6,7 @@ type contactDataType = Array<{name: string, link: string, Icon: React.ElementTyp
 export const contactInfo: contactDataType = [
   {name: 'Github', link: 'https://github.com/BryanDavis999', Icon: FaGithub},
   {name: 'LinkedIn', link: 'https://linkedin.com/in/bryandavis999/', Icon: FaLinkedin},
-  {name: 'Email', link: 'bryandavis999.dev@gmail.com', Icon: SiGmail},
+  {name: 'Email', link: 'mailto:bryandavis999.dev@gmail.com', Icon: SiGmail},
 ]
 
 export default contactInfo

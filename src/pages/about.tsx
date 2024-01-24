@@ -51,7 +51,7 @@ const About = ({employmentHistory, educationHistory}: any) => {
             <Image fill={true} src='/about/self.jpg' alt='A photo of Bryan' className='rounded-2xl'/>
           </div>
           <div className='mt-6 ml-0 md:mt-0 md:ml-6 flex flex-col justify-between'>
-            <h1 className='text-4xl mb-6 font-bold'>Hi, I&apos;m Bryan.</h1>
+            <h1 className='text-4xl mb-6 font-semibold '>Hi, I&apos;m Bryan.</h1>
             <div>
               <span>A software developer who prides himself on elegant and easy-to-maintain solutions. </span>
               <span className='lg:inline-block'>I have three years of professional experience in full stack web development. </span>
